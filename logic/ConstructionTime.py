@@ -1,5 +1,5 @@
 from colorama import Fore
-from stdconst import apply_overhead
+from stdconst import apply_overhead, ignore, mutate
 
 class ConstructionTimeCalculator:
     def __init__(self) -> None:
@@ -104,7 +104,7 @@ class ConstructionTimeCalculator:
             st = v;
             for p, _v in self.muters.items():
                 if f'${k}' in _v:
-                    _v_changed = list(map(lambda x: self.sheet[x[1:]] if '$' in str(x) else x, _v.copy()));
+                    _v_changed = list(map(lambda x: st if '$' in str(x) else x, _v.copy()));
                     st = self.functions[p](_v_changed);
         
             sh_sum += st
@@ -147,6 +147,6 @@ constr = ConstructionTimeCalculator();
 constr.import_spreadsheet(PATH);
 print(constr);
 
-constr.add_functions({'apply_overhead': apply_overhead});
+constr.add_functions({'apply_overhead': apply_overhead, 'ignore': ignore, 'mutate': mutate});
 
 print('Total time for construction:', constr.calculate());
