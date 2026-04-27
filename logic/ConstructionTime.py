@@ -135,6 +135,10 @@ class ConstructionTimeCalculator:
                 
                 + '\n----- [ END ] -----' 
                 + Fore.RESET);
+
+    def write_file(self, path: str = 'output.txt'):
+        with open(path, 'a') as f:
+            f.write(f'TOTAL: {self.calculate()}')
         
 import os
 
