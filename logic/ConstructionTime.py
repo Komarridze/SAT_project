@@ -135,6 +135,28 @@ class ConstructionTimeCalculator:
                 
                 + '\n----- [ END ] -----' 
                 + Fore.RESET);
+    
+    def write_to_file(self, path: str = 'scratch_workoutput.csho') -> None:
+        with open(path, 'w+') as f:
+            f.write(Fore.LIGHTMAGENTA_EX + 
+                '\n----- [ INFO ] -----\n' 
+                
+                + '\n[ * PARAMETERS * ]\n'
+                
+                + ''.join([f'*{str.upper(p)}: {v}\n' for p,v in self.params.items()]) 
+
+                + '\n[ * MUTERS * ]\n'
+                
+                + ''.join([f'*{str.upper(p)}: &{v}\n' for p,v in self.muters.items()]) 
+                
+                + '\n[ * SHEET * ]\n'
+                
+                + ''.join([f'{str.upper(p)}: {v}\n' for p,v in self.sheet.items()]) 
+                
+                + '\n----- [ END ] -----'
+                
+                + f'\nTOTAL SUM OF WORKHOURS: {self.calculate()}'
+                );
         
 import os
 
@@ -150,3 +172,5 @@ print(constr);
 constr.add_functions({'apply_overhead': apply_overhead, 'ignore': ignore, 'mutate': mutate});
 
 print('Total time for construction:', constr.calculate());
+
+constr.write_to_file();
