@@ -7,4 +7,5 @@ def ignore(_: list) -> int:
 def mutate(args: list) -> int | float:
     return args[1]
 
-
+def quadratic_mutate(args: list) -> int | float:
+    return args[0] * args[0]
