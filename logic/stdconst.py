@@ -7,4 +7,5 @@ def ignore(_: list) -> int:
 def mutate(args: list) -> int | float:
     return args[1]
 
-
+def sqrt(args: list) -> float:
+    return args[0] ** 0.5
