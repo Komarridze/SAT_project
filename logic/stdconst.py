@@ -6,3 +6,5 @@ def ignore(_: list) -> int:
 
 def mutate(args: list) -> int | float:
     return args[1]
+
+
