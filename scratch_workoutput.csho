@@ -5,13 +5,15 @@
 *OVERHEAD: 0.1
 
 [ * MUTERS * ]
-*APPLY_OVERHEAD: &['$foundation', 0.4]
-*IGNORE: &['$walls']
-*MUTATE: &['$foundation', 150.0]
+*APPLY_OVERHEAD: &['$naked_boy_statue', 0.2]
+*IGNORE: &['$Oleh']
 
 [ * SHEET * ]
-FOUNDATION: 100.0
-WALLS: 50.0
+FOUNDATION: 670.0
+WALLS: 228.0
+ROOF: 31.0
+NAKED_BOY_STATUE: 2.0
+BAR: 1200.0
 
 ----- [ END ] -----
-TOTAL SUM OF WORKHOURS: 165.0
+TOTAL SUM OF WORKHOURS: 2344.54
