@@ -11,4 +11,5 @@ def quadratic_mutate(args: list) -> int | float:
     return args[0] * args[0]
   
 def sqrt(args: list) -> float:
+    pass
     return args[0] ** 0.5
