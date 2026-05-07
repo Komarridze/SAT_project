@@ -11,6 +11,11 @@ class ConstructionTimeCalculator:
         self.functions = {};
         
         return
+    
+    def clear(self) -> None:
+        self.params = {};
+        self.sheet = {};
+        self.muters = {};
 
     def add_functions(self, fcs: dict[str, callable]) -> None:
         self.functions.update(fcs);
@@ -175,4 +180,4 @@ constr.add_functions({'apply_overhead': apply_overhead, 'ignore': ignore, 'mutat
 
 print('Total time for construction:', constr.calculate());
 
-constr.write_to_file();
+constr.write_to_file(); 
